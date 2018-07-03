@@ -6,7 +6,7 @@ export const FETCH_PROJECT = 'FETCH_PROJECT';
 export const FETCH_TECHNOLOGIES = 'FETCH_TECHNOLOGIES';
 export const FETCH_TECHNOLOGY = 'FETCH_TECHNOLOGY';
 
-const ROOT_URL = 'http://eruma.se/wp-json/wp/v2';
+const ROOT_URL = 'https://eruma.se/wp-json/wp/v2';
 
 export function fetchProjects() {
     const request = axios.get(`${ROOT_URL}/projects?&_embed=true`);

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchProject } from '../actions/index';
 import { Link } from 'react-router';
+import { Helmet } from 'react-helmet';
 
 class ProjectsSingle extends Component {
     componentWillMount() {
@@ -12,11 +13,16 @@ class ProjectsSingle extends Component {
         const { project } = this.props;
         
         if( !project ) {
-            return <div><img alt="loading content" src={`${wpglobals.pluginURL}/images/Spin-1s-200px.gif`}/></div>;
+            return <div><img alt="loading content" src={`../images/Spin-1s-200px.gif`}/></div>;
         }
         
         return(
             <div id="primary" className="content-area">
+                <Helmet>
+                    <title>Eruma Showcase - {project.title.rendered}</title>
+                    <meta name="description" content={project.excerpt.rendered} />
+                    <meta name="og:image" content={project._embedded["wp:featuredmedia"][0].source_url} />
+                </Helmet>
                 <article key={project.id} className="single-project">
                     <header>
                         <h1>{project.title.rendered}</h1>

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchProjects } from '../actions/index';
 import { Link } from 'react-router';
+import { Helmet } from 'react-helmet';
 
 class ProjectsIndex extends Component {
     componentWillMount() {
@@ -42,6 +43,9 @@ class ProjectsIndex extends Component {
         }
         return(
             <div id="primary" className="content-area">
+                <Helmet>
+                    <title>Eruma Showcase - Tobias Årud portfolio</title>
+                </Helmet>
                 <h1>Projects</h1>
                 {this.renderProjects()}
             </div>

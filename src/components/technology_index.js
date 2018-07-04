@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from 'react-redux';
 import { fetchProjectsTechnology, fetchTechnology } from '../actions/index';
 import { Link } from 'react-router';
+import { Helmet } from 'react-helmet';
 
 class TechnologyIndex extends Component {
     componentWillMount() {
@@ -29,6 +30,9 @@ class TechnologyIndex extends Component {
     render() {
         return (
             <div id="primary" className="content-area">
+                <Helmet>
+                    <title>Eruma Showcase - Technology: {this.props.technology[1].name}</title>
+                </Helmet>
                 <h1>Technology: {this.props.technology[1].name}</h1>
                 {this.renderTechnology()}
             </div>

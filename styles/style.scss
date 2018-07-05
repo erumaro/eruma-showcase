@@ -1,4 +1,16 @@
-// This the main SASS file with most general code for project plugin
-@import "project";
-// Code specific for single project pages.
-@import "single-project";
+// Variables & Mixins
+@import "varmixin/vars";
+@import "varmixin/mixins";
+
+// Normalize
+@import "normalize";
+
+// Generic Styles
+@import "generic/typography";
+@import "generic/elements";
+@import "generic/forms";
+
+// Specific Styles
+@import "specific/header";
+@import "specific/main";
+@import "specific/footer";

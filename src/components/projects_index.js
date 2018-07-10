@@ -36,11 +36,6 @@ class ProjectsIndex extends Component {
     }
     
     render() {
-        if(!this.props.fetchProjects()){
-            return(
-            <div id="primary" className="content-area"><img src="../../images/Spin-1s-200px.gif"/></div>
-            );
-        }
         return(
             <div id="primary" className="content-area">
                 <Helmet>

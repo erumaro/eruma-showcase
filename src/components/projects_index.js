@@ -41,7 +41,7 @@ class ProjectsIndex extends Component {
                 <Helmet>
                     <title>Eruma Showcase - Tobias Årud portfolio</title>
                 </Helmet>
-                <h1>Projects</h1>
+                <h1>Recent Projects</h1>
                 {this.renderProjects()}
             </div>
         );

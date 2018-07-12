@@ -6,16 +6,8 @@ class Header extends Component {
         return (
             <header id="masthead" className="site-header">
                 <div className="site-branding">
-                    
+                    <img className="site-logo" alt="Eruma logo" src={`../images/erumalogo.svg`}/>
                 </div>
-                <nav id="site-navigation" className="main-navigation">
-                    <ul id="primary-menu">
-                        <li>Section 1</li>
-                        <li>Section 2</li>
-                        <li>Section 3</li>
-                        <li>Section 4</li>
-                    </ul>
-                </nav>
             </header>
         );
     }

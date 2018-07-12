@@ -1,0 +1,16 @@
+.site-branding{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+}
+
+.site-logo{
+    width: 60vw;
+}
+
+@media screen and (min-width: 37.5em) {
+    .site-logo{
+        max-width: 300px;
+    }
+}

@@ -5,7 +5,7 @@ class Footer extends Component {
     render() {
         return (
             <footer id="colophon" className="site-footer">
-                copyright here
+                <p>&copy; 2018 Eruma | Visit Wordpress theme for more content <a href="https://eruma.se">eruma.se</a></p>
             </footer>
         );
     }

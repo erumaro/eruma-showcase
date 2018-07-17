@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { fetchProject } from '../actions/index';
 import { Link } from 'react-router';
 import { Helmet } from 'react-helmet';
+import spinner from '../../images/Spin-1s-200px.gif';
 
 class ProjectsSingle extends Component {
     componentWillMount() {
@@ -13,7 +14,7 @@ class ProjectsSingle extends Component {
         const { project } = this.props;
         
         if( !project ) {
-            return <div><img alt="loading content" src={`../images/Spin-1s-200px.gif`}/></div>;
+            return <div><img alt="loading content" src={spinner}/></div>;
         }
         
         return(

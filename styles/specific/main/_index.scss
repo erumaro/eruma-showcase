@@ -1,4 +1,4 @@
-#page{
+
     .site-content{
         display: flex;
         justify-content: space-around;
@@ -73,10 +73,8 @@
             text-decoration: none;
         }
     }
-}
 
 @media screen and (min-width: 60em) {
-    #page{
         .site-content{
             padding: 0 2em;
         }
@@ -100,5 +98,4 @@
                 order: 1;
             }
         }
-    } 
 }

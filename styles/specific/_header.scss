@@ -1,3 +1,10 @@
+.site-header{
+	border-top: 2px solid black;
+	height: auto;
+	background: linear-gradient(to top, rgba(255,0,0,0), rgb(119, 20, 20));
+	padding: 0.5em 1em;
+}
+
 .site-branding{
     display: flex;
     justify-content: center;

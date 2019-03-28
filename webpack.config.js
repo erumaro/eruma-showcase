@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const VENDOR_LIBS = [
@@ -25,24 +25,12 @@ module.exports = {
                 exclude: /node_modules/
             },
             {
-                use: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    use: [
-                        {
-                            loader: 'css-loader',
-                            options: {
-                                sourceMap: true
-                            }
-                        },
-                        {
-                            loader: 'sass-loader',
-                            options: {
-                                sourceMap: true
-                            }
-                        }
-                    ]
-                }),
-                test: /\.scss$/
+                test: /\.scss$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    'sass-loader'
+                ]
             },
             {
                 test: /\.(eot|svg|ttf|woff|woff2)$/,
@@ -54,20 +42,26 @@ module.exports = {
             }
         ]
     },
+    optimization: {
+        splitChunks: {
+            cacheGroups: {
+                vendor: {
+                    chunks: 'initial',
+                    name: 'vendor',
+                    test: 'vendor',
+                    enforce: true
+                },
+            }
+        },
+        runtimeChunk: true,
+    },
     plugins: [
-        new webpack.DefinePlugin({
-            'process.env.NODE_ENV': JSON.stringify('production')
-        }),
-        new webpack.optimize.CommonsChunkPlugin({
-            names: ['vendor', 'manifest']
-        }),
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: 'src/index.html'
         }),
-        new ExtractTextPlugin({
-            filename: 'style.css',
-            allChunks: true
+        new MiniCssExtractPlugin({
+            filename: 'style.css'
         })
     ],
     

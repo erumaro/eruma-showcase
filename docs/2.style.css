@@ -501,6 +501,10 @@ article.project:nth-child(2n+1) {
       height: 70vh;
       width: auto; } }
 
+.spinner {
+  width: 30vh;
+  height: auto; }
+
 .site-footer {
   background: #eee;
   display: flex;

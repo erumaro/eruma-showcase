@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { fetchProject } from '../actions/index';
 import { Link } from 'react-router';
 import { Helmet } from 'react-helmet';
-import spinner from '../../images/Spin-1s-200px.gif';
+import Spinner from '../components/spinner.js';
 
 class ProjectsSingle extends Component {
     componentWillMount() {
@@ -14,7 +14,7 @@ class ProjectsSingle extends Component {
         const { project } = this.props;
         
         if( !project ) {
-            return <div><img alt="loading content" src={spinner}/></div>;
+            return <div><Spinner/></div>;
         }
         
         return(
@@ -24,6 +24,7 @@ class ProjectsSingle extends Component {
                     <meta name="description" content={project.excerpt.rendered} />
                     <meta name="og:image" content={project._embedded["wp:featuredmedia"][0].source_url} />
                 </Helmet>
+                <Link to={'/'} type="button">Return to home</Link>
                 <article key={project.id} className="single-project">
                     <header>
                         <h1>{project.title.rendered}</h1>

@@ -13,7 +13,8 @@ export function fetchProjects() {
     
     return {
         type: FETCH_PROJECTS,
-        payload: request
+        payload: request,
+        isLoading: false,
     };
 }
 

@@ -3,9 +3,10 @@ import { connect } from 'react-redux';
 import { fetchProjects } from '../actions/index';
 import { Link } from 'react-router';
 import { Helmet } from 'react-helmet';
+import Spinner from '../components/spinner.js';
 
 class ProjectsIndex extends Component {
-    componentWillMount() {
+    componentDidMount() {
         this.props.fetchProjects();
     }
     
@@ -36,6 +37,17 @@ class ProjectsIndex extends Component {
     }
     
     render() {
+        if(this.props.projects.length === 0){
+            return(
+                <div id="primary" className="content-area">
+                    <Helmet>
+                        <title>Eruma Showcase - Tobias Årud portfolio</title>
+                    </Helmet>
+                    <h1>Recent Projects</h1>
+                    <Spinner/>
+                </div>
+            );
+        } else{
         return(
             <div id="primary" className="content-area">
                 <Helmet>
@@ -45,6 +57,7 @@ class ProjectsIndex extends Component {
                 {this.renderProjects()}
             </div>
         );
+        }
     }
 }
 

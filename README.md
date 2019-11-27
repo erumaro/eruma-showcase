@@ -17,3 +17,8 @@ https://github.com/erumaro/eruma-portfolio
 
 Redesigned version, without Semantic UI of Eruma go as a wp plugin with borrowed design from Eruma-Yon theme.
 Local version have been tested and worked and looked nice, Live version release not working due errors. Need to fix these issues, but might take a while...
+
+## 2019-2020 Rework
+A planned rework of the code using updated React, Redux etc. code.
+Will utilize current code as base, but modernize it.
+The reworked version will also get a design / UI rework and follow in the Eruma Roku themes footsteps.
